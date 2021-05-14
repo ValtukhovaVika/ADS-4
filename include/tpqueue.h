@@ -61,18 +61,18 @@ void TPQueue<T>::push(const T& item) {
 
 template<typename T>
 T TPQueue<T>::pop() {
- assert(count > 0);
- T item = arr[begin++];
- count--;
- if (begin > size)
-  begin -= size + 1;
- return item;
+  assert(count > 0);
+  T item = arr[begin++];
+  count--;
+  if (begin > size)
+    begin -= size + 1;
+  return item;
 }
 
 template<typename T>
 T TPQueue<T>::get() const {
-    assert(count > 0);
-    return arr[begin];
+  assert(count > 0);
+  return arr[begin];
 }
 
 template<typename T>
