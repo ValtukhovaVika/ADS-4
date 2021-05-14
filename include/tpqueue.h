@@ -12,9 +12,8 @@ class TPQueue {
         end;
     int count;
  public:
-    TPQueue(int = 100);
+    TPQueue();
     ~TPQueue();
-    
   void push(const T &);
     T pop();
     T get() const;
@@ -24,7 +23,7 @@ class TPQueue {
 
 template<typename T>
 TPQueue<T>::TPQueue() : size(100),
-    begin(0), end(0), count(0){
+    begin(0), end(0), count(0) {
     arr = new T[size + 1];
 }
 
@@ -62,14 +61,12 @@ void TPQueue<T>::push(const T& item) {
 
 template<typename T>
 T TPQueue<T>::pop() {
-    assert(count > 0);
- 
-    T item = arr[begin++];
-    count--;
-  if (begin > size)
-        begin -= size + 1;
-  
-    return item;
+ assert(count > 0);
+ T item = arr[begin++];
+ count--;
+ if (begin > size)
+  begin -= size + 1;
+ return item;
 }
 
 template<typename T>
